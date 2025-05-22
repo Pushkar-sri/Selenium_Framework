@@ -1,4 +1,0 @@
-Send Keys method executed.
-Send Keys method called.
-Send Keys method executed.
-Click method executed.
