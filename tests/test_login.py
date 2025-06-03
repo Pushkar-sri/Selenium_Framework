@@ -2,6 +2,8 @@ import pytest
 from driver.driver_factory import DriverFactory
 from pages.login_page import LoginPage
 from utils.config import Config
+from locators.login_locators import LoginLocators
+
 import time
 
 class TestLogin:
@@ -22,12 +24,22 @@ class TestLogin:
         time.sleep(5)
         assert "Swag Labs" in self.driver.title
 
+     def test_login_success1(self):
+        
+        self.login_page.enter_username(Config.USERNAME1)
+        time.sleep(3)
+        self.login_page.enter_password(Config.PASSWORD)
+        time.sleep(3)
+        self.login_page.click_login()
+        time.sleep(5)
+        assert "Swag Labs" in self.driver.title
 
-'''Steps:
-    @param u1 p1
-    @param u1 p2
-@param u1 p2
-    Login Text case success {} {}
-        Enter Text Sahasrsh Localtion
-        Enter Text password locatior 
-        Then Validhf '''
+     def test_login_fail(self):
+        
+        self.login_page.enter_username(Config.USERNAME2)
+        time.sleep(3)
+        self.login_page.enter_password(Config.PASSWORD)
+        time.sleep(3)
+        self.login_page.click_login()
+        time.sleep(5)
+        assert "sadface" in self.login_page.get_Text(LoginLocators.Error)

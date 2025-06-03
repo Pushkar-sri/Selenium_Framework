@@ -14,3 +14,5 @@ class BasePage:
     def get_title(self):
         print("Get Title method executed.")
         return self.driver.title
+    
+    
