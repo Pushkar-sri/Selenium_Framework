@@ -17,7 +17,8 @@ class TestLogin:
 
      def test_login_success(self):
         self.login_page.enter_username(Config.USERNAME)
-        time.sleep(3)
+        
+
         self.login_page.enter_password(Config.PASSWORD)
         time.sleep(3)
         self.login_page.click_login()
