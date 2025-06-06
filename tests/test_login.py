@@ -17,7 +17,7 @@ class TestLogin:
 
      def test_login_success(self):
         self.login_page.enter_username(Config.USERNAME)
-        
+        time.sleep(3)
 
         self.login_page.enter_password(Config.PASSWORD)
         time.sleep(3)
@@ -38,9 +38,9 @@ class TestLogin:
      def test_login_fail(self):
         
         self.login_page.enter_username(Config.USERNAME2)
-        time.sleep(3)
+        time.sleep(5)
         self.login_page.enter_password(Config.PASSWORD)
-        time.sleep(3)
+        time.sleep(5)
         self.login_page.click_login()
         time.sleep(5)
         assert "sadface" in self.login_page.get_Text(LoginLocators.Error)
